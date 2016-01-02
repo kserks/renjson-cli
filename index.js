@@ -1,25 +1,17 @@
 #! /usr/bin/env node
-module.exports =  ren;
+
+
+var __ = require('./lib/__');
 var program  = require('commander');
-var open = require('open');
-var npmRoot = require('npm-root');
-var slash = require('slash');
 var fs = require('fs-extra');
-
 var log = require( "my-log" );
-var livereload = require( "./lib/watch" );
+var exeCute = require('exe');
 
-//var cheerio = require('cheerio');
 
-var express = require('express');
-
-var port = 8080;
-var browser = 'chrome';
-var __cwd = slash(process.cwd());
 
 var ren = {
 	init:function(env){
-	npmRoot({global:true},function(err,path){
+	/*npmRoot({global:true},function(err,path){
 		if(err){
 			console.error(err);
 		}
@@ -36,43 +28,35 @@ var ren = {
 			});
 		}
 	});
-
+	*/
 	},
 
 	run:function(env){
-		livereload.run();
+	//log.data(nw_app);
+	//exeCute(nwpath+" "+nw_app);
+	
+		/*livereload.run();*/
 
-	var app = express();
-	var index = fs.readFileSync( __cwd+"/index.html");
-		app.use('/', express.static(__cwd));
-		app.use('/devTools',express.static(__dirname+'/devTools'));
-
-		app.get("/", function(req, res){
-			res.send(index);
-		});
-
-		app.listen(port,function(){
-				open('http://localhost:'+port,browser);
-				log.debug('localhost:'+port.toString());	
-		});
 	},
 	build:function(env){
-		/*
-			Собирать буду просто html project
-			Потому что нормальный пользователь
-			может исспользовать cordova,phonegap
-			для мобильных приложений, а так же
-			 nw или electon. SmartBox
+		/**
+			nw.builder()
+			html.project
 		*/
-		console.log('html project');
+		//log.debug(__.nw);
+		//log.success(__.cwd);
+		//var p = exeCute("%APPDATA%")
+		//var pathOfRen = modulePath('renjs-cli');
+		log.warn(__.root);
 	},
 
 };
 
 program.arguments('<cmd> [env]')
-  			.action(function (cmd, env) {
+  			.action(function (cmd, env){
 						ren[cmd](env);
   			});
  
 program.parse(process.argv);
 
+module.exports =  ren;
