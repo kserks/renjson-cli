@@ -1,16 +1,27 @@
-# renjs-cli
+##renjson-cli
 
-###install via npm
+####install via npm
 
-```batch
+```sh
 npm install renjs-cli -g
 ```
 
 ###initialize project in current directory
-```batch
-ren init
+```sh
+ren init yaml
 ```
-###run project
-```batch
+or
+```sh
+ren init json5
+```
+####run project
+```sh
 ren run
 ```
+####
+
+####build project
+```sh
+ren build www
+```
+
