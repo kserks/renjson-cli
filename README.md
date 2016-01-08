@@ -3,7 +3,7 @@
 ####install via npm
 
 ```batch
-npm install renjs-cli -g
+npm install renjson-cli -g
 ```
 
 ###initialize project in current directory
