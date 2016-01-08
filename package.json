@@ -1,7 +1,7 @@
 {
-  "name": "renjs-cli",
-  "version": "0.2.2",
-  "description": "",
+  "name": "renjson-cli",
+  "version": "0.2.7",
+  "description": "cli utils for renjson",
   "main": "index.js",
   "scripts": {
     "test": "echo hello world"
@@ -14,18 +14,13 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "exe": "^1.0.2",
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
     "jju": "^1.2.1",
-    "module-path": "0.0.20151019",
     "my-log": "^0.1.1",
-    "npm": "^3.5.2",
-    "npm-root": "^1.1.0",
-    "nw": "^0.12.3",
-    "nw-builder": "^2.2.0",
-    "renjs": "^0.3.0",
+    "open": "0.0.5",
     "slash": "^1.0.0",
+    "livereload":"0.4.0",
     "walk-folder-tree": "^1.0.1"
   },
   "engines": {
