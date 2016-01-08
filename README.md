@@ -2,26 +2,26 @@
 
 ####install via npm
 
-```sh
+```batch
 npm install renjs-cli -g
 ```
 
 ###initialize project in current directory
-```sh
+```batch
 ren init yaml
 ```
 or
-```sh
+```batch
 ren init json5
 ```
 ####run project
-```sh
+```batch
 ren run
 ```
 ####
 
 ####build project
-```sh
+```batch
 ren build www
 ```
 
