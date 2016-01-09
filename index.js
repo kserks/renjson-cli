@@ -1,11 +1,12 @@
 #! /usr/bin/env node
 
-
+var gulp = require('gulp');
+var livereload = require('gulp-livereload');
 var __ = require('./lib/__');
 var program  = require('commander');
 var fs = require('fs-extra');
 var log = require( "my-log" );
-var livereload= require('./lib/watch');
+//var livereload= require('./lib/watch');
 
 var ren = {
 	init:function(env){
@@ -29,26 +30,41 @@ var ren = {
 			log.warn('Enter the params');
 		}
 	},
-
+//'less/*.less'
 	run:function(env){
 		this.build();
-		require('./lib/server');
-		livereload.run();
 		
  		log.data('Enter Ctrl+C for the exit in the repl');
- 		log.debug(__.tmp);
-	},
+ 		log.debug(__.www);
+ 		require('./lib/server');
+ 		gulp.task('log', function() {
+ 				log.error('livereload:');
 
+ 		});
+ 		gulp.task('watch', function() {
+ 			livereload.listen({
+ 				basePath:__.cwd,
+ 				port:35729,
+ 				reloadPage:__.www+"/index.html",
+ 				//start:true
+ 			});
+ 		 	gulp.watch("/*.yml", ['log']);
+		});
+		gulp.run('watch');
+
+	},
 
 	build:function(env){
 		
-		fs.copy(__.vn_tpl, __.tmp,function(err){
+		fs.copy(__.vn_tpl, __.www,function(err){
 			if(!err){
-				fs.copy(__.cwd, __.tmp+"/game/",function(err){
+				fs.copy(__.cwd, __.www+"/game/",function(err){
 					if(err){
 						console.log(err);
 					}
 				});
+			}else{
+				console.error(err);
 			}
 			});
 	}
