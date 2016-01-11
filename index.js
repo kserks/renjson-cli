@@ -5,8 +5,12 @@ var livereload = require('gulp-livereload');
 var __ = require('./lib/__');
 var program  = require('commander');
 var fs = require('fs-extra');
+var slash = require('slash');
 var log = require( "my-log" );
-//var livereload= require('./lib/watch');
+var EM = require('exclusion-manager');
+var toIgnore = [
+		__.cwd+'/node_modules'
+	];
 
 var ren = {
 	init:function(env){
@@ -55,8 +59,24 @@ var ren = {
 	},
 
 	build:function(env){
-		
-		fs.copy(__.vn_tpl, __.www,function(err){
+		var emanager = new EM(toIgnore);
+var items = [];		
+fs.walk(__.cwd)
+  .on('data', function (item) {
+  	//var item = slash(item);
+  	if(emanager.shouldIgnore(slash(item.path) )){
+
+  	}else{
+  		items.push(item.path);
+  		
+  	}
+    
+  })
+  .on('end', function () {
+    console.dir(items);
+  
+  });
+	/*	fs.copy(__.vn_tpl, __.www,function(err){
 			if(!err){
 				fs.copy(__.cwd, __.www+"/game/",function(err){
 					if(err){
@@ -66,9 +86,11 @@ var ren = {
 			}else{
 				console.error(err);
 			}
-			});
+			});*/
+	
+	
+	//console.log(emanager.shouldIgnore('node_modules'));
 	}
-
 };
 
 
