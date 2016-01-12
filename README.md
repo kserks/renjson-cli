@@ -22,6 +22,6 @@ ren run
 
 ####build project
 ```batch
-ren build www
+ren build
 ```
 
