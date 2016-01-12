@@ -1,19 +1,19 @@
 -
-parent:parent
-id: #scene
-style:
-  width:width
-  height:height
-  position:absolute
-  top:0
-  left:0
+ parent: parent
+ id: #scene
+ style:
+  width: width
+  height: height
+  position: absolute
+  top: 0
+  left: 0
 - 
-id:#show
-parent:#scene
-style:
-  width:width
-  height:height
-  position:absolute
-  top:0
-  left:0
+ id: #show
+ parent: #scene
+ style:
+  width: width
+  height: height
+  position: absolute
+  top: 0
+  left: 0
 
