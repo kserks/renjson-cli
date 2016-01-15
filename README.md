@@ -8,12 +8,9 @@ npm install renjson-cli -g
 
 ###initialize project in current directory
 ```batch
-ren init yaml
+ren init
 ```
-or
-```batch
-ren init json5
-```
+
 ####run project
 ```batch
 ren run

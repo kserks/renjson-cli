@@ -13,12 +13,11 @@
     "ren": "index.js"
   },
   "dependencies": {
-	"commander": "^2.9.0",
+    "commander": "^2.9.0",
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
     "gulp": "^3.9.0",
     "gulp-livereload": "^3.8.1",
-    "jju": "^1.2.1",
     "my-log": "^0.1.1",
     "open": "0.0.5",
     "slash": "^1.0.0",
