@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 
-
 var main = require('./lib/main');
 var program  = require('commander');
 var log = require( "my-log" );

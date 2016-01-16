@@ -1,6 +1,6 @@
 {
   "name": "renjson-cli",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "cli utils for renjson",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
+    "directory-tree": "^0.1.1",
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
     "gulp": "^3.9.0",
@@ -21,6 +22,7 @@
     "my-log": "^0.1.1",
     "open": "0.0.5",
     "slash": "^1.0.0",
+    "underscore": "^1.8.3",
     "walk-folder-tree": "^1.0.1"
   },
   "git": "https://github.com/kserks/renjson-cli",
