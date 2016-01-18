@@ -1,4 +1,3 @@
-ren.plugin.alert = function(text){
-	
-	alert("label: " +this.label);
-}
+ren.event.alert = function(text){
+	alert(text);
+};

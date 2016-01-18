@@ -1,19 +1,21 @@
 -
- parent: parent
- id: #scene
+ parent: global.parent
+ id: scene
  style:
-  width: width
-  height: height
+  width: 600px
+  height: 400px
   position: absolute
-  top: 0
-  left: 0
+  top: 0px
+  left: 0px
 - 
- id: #show
- parent: #scene
+ parent: scene
+ id: dialogBox
  style:
-  width: width
-  height: height
+  width: 600px
+  height: 100px
   position: absolute
-  top: 0
-  left: 0
+  top: 300px
+  left: 0px
+  backgroundColor: rgba(0,0,0,0.7)
+  color: "#999"
 
