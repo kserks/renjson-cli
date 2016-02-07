@@ -1,5 +1,5 @@
 /**
-* @version 0.3.3
+* @version 0.3.4
 * @author kserks
 * @license MIT license
 */
@@ -17,7 +17,10 @@ var ren = {};
 ren.game = {
 	scenes:{},
 	layers:{},
+	package:{},
 	config:{},
+	global:{},
+	characters:{}
 };
 ren.route = function(){
 
@@ -30,11 +33,11 @@ location.hash = [
 
 };//ren.route()
 ren.current = {
-	Array:[],
-	Object:{},
-	Number:0,
-	scene:null,
-	label:null,
+	Array: [],
+	Object: {},
+	Number: 0,
+	scene: null,
+	label: null
 };
 ren.event = {
 	name:function(character){
@@ -114,10 +117,37 @@ ren.extend = function(){
 
 	ren.event = $.extend(ren.event,characters);
 };
+ren.createLayers = function(layers){
+	/**
+	 * Задаю стили родительскому элементу
+	 */
+$(ren.config.parent).append("<canvas id='vn' ></canvas");
+var canvas = document.getElementById('vn');
+canvas.style.border ="2px dotted grey";
+canvas.width = 600;
+canvas.height = 400;
+
+var ctx = canvas.getContext("2d");
+
+function creatLayer(layer){
+	ctx.fillStyle = layer.style.backgroundColor;
+	ctx.fillRect(layer.style.x,layer.style.y,canvas.width,canvas.height);
+}
+
+//
+/**
+LAYERS[].pusth()
+update();
+
+*/
+//scene.children[<dbox>]
+
+			//ren.event.jump(startLabel);
+};
 ren.getScene = function(scene,label){
 var dir = ren.path.scenes;
 
-
+//require(labelpath)
 var labelPath = [dir,scene,label].join('/').concat('.json');
 /**
  * Загружаю сцену
@@ -271,33 +301,31 @@ switch(param){
 
 }*/
 ren.path = {
-	scenes:'/scenes',
-	config:'config.json',
+	init:'/game/init.json',
 };
 ren.config = {
-
+	chache:false,
+	dataType:"text",
+	parent:"#game"
 };
 
 ren.init = function(){
-var configPath = [ren.path.scenes,ren.path.config].join('/');
-$.ajaxSetup({
-	dataType:"text",
-	dataFilter:function(data){
-		return JSON.parse(data);
-	},
-	chache:false
-})
 
-$.ajax(configPath)
-	.done(function(data){
-			ren.game.config = data;
-	})
-	.fail(function(err){
-			console.error(err);
-	})
-	.then(function(){
-		var startLabel = ren.game.config.startLabel;
-		ren.event.jump(startLabel);
-	});
+$.get('/game/layers.html',function(layers){
+	$(ren.config.parent).append(layers);
+});
+
+//init load
+$.ajax({
+	url:ren.path.init,
+	dataType:"json",
+	success:function(data){
+		ren.game = data;
+	},
+	error:function(err){
+		console.error(err);
+	}
+});
+
 
 };//ren.init()
