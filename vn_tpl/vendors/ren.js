@@ -1,5 +1,5 @@
 /**
-* @version 0.3.4
+* @version 0.3.7
 * @author kserks
 * @license MIT license
 */
@@ -7,19 +7,10 @@
 /** @global */
 var ren = {};
 
-/**
- * @todo Написать посимвольный вывод текста
- * @todo Сделать загрузчик сцен
- * @todo Анимация внутри dialog-box в конце текста.
- * @todo Сделать memoryCard
- */
-
 ren.game = {
 	scenes:{},
-	layers:{},
 	package:{},
 	config:{},
-	global:{},
 	characters:{}
 };
 ren.route = function(){
@@ -41,15 +32,12 @@ ren.current = {
 };
 ren.event = {
 	name:function(character){
-	
-		$('#name-box')
-			.html(character.name+': ')
+		$('#name_box')
+			.html(character.name)
 			.css('color',character.color);
-
-	
 	},
 	reply:function(text,character){	
-		$('#text')
+		$('#text_box')
 				.html(text)
 				.css('color',character.color);
 	},
@@ -58,40 +46,28 @@ ren.event = {
 		console.error("Обработчик "+ name +" не зарестрирован");
 			
 	},
-	layer:function(id,param){
-		
-		//$('#'+id).css('background','url("'+ren.images[param]+'")');
-		console.info("{"+id+":"+param+"}");
+	center:function(value){
+		console.debug('center: '+value);
 	},
-	/*audio:function(val){
-		if(val in ren.audio){
-
-
-		var AudioSrc = ren.audio[val];
-		
-			new Howl({
- 					urls: [AudioSrc],
- 					loop:true
-				}).play();
+	audio:function(value){
+		console.debug("audio: "+value);
+	},
+	scene:function(value){
+		console.debug("scene: "+value);
 	}
-	
-	else{
-		console.error('Параметр audio '+val+' не верен');
-
-	}
-	},*/
-
 
 };
 
 
 ren.event.jump = function(pathname){
-
+console.info("jump: "+pathname);
 ren.current.scene =  pathname.split('/')[0];
 ren.current.label =  pathname.split('/')[1];
 ren.current.Number = 0;
 if(ren.game.scenes[ren.current.scene]){
-	console.warn('Сцена уже загружена');
+	//console.warn('Сцена уже загружена');
+	ren.current.Number =-1;
+	ren.current.Array = ren.game.scenes[ren.current.scene][ren.current.label]
 }
 else{
 	/**
@@ -99,14 +75,14 @@ else{
 	 * @param {string} scene - current scene
 	 * @param {string} label - current label
 	 */
+	
 	ren.getScene(ren.current.scene,ren.current.label);
-
 }
 
 
 };
 ren.extend = function(){
-	var characters= ren.game.scenes[ren.current.scene]['characters']
+	var characters= ren.game.characters;
 	/**
 	*concat keywords
 	@param {object} event - ren.event object
@@ -117,55 +93,34 @@ ren.extend = function(){
 
 	ren.event = $.extend(ren.event,characters);
 };
-ren.createLayers = function(layers){
-	/**
-	 * Задаю стили родительскому элементу
-	 */
-$(ren.config.parent).append("<canvas id='vn' ></canvas");
-var canvas = document.getElementById('vn');
-canvas.style.border ="2px dotted grey";
-canvas.width = 600;
-canvas.height = 400;
-
-var ctx = canvas.getContext("2d");
-
-function creatLayer(layer){
-	ctx.fillStyle = layer.style.backgroundColor;
-	ctx.fillRect(layer.style.x,layer.style.y,canvas.width,canvas.height);
-}
-
-//
-/**
-LAYERS[].pusth()
-update();
-
-*/
-//scene.children[<dbox>]
-
-			//ren.event.jump(startLabel);
-};
 ren.getScene = function(scene,label){
+
 var dir = ren.path.scenes;
 
 //require(labelpath)
-var labelPath = [dir,scene,label].join('/').concat('.json');
+var scenePath = [dir,scene].join('/').concat('.json');
 /**
  * Загружаю сцену
  */
-$.get(labelPath,function(data){
+
+$.get(scenePath,function(data){
 		ren.game.scenes[scene] = data;
-		ren.current.Array = data[scene];
+		ren.current.Array = data[label];
 		ren.extend();
 		ren.parse();
-		$(ren.game.config.parent).on('click',function(){
-			ren.parse();
-		})
+		
+
 });
+
+
 
 	
 };
 
 ren.parse = function(){
+//console.info("parse")
+//ren.route();
+
 
 if(ren.current.Array.length<=ren.current.Number){
 	console.warn('end chapter');
@@ -178,11 +133,11 @@ if(ren.current.Array.length<=ren.current.Number){
 			ren.keyMaster(ren.event[key],ren.current.Object[key],key);
 	});
 
-	ren.current.Number ++
+	ren.current.Number++;
 
 }
 
-}//ren.parse()
+};//ren.parse()
 
 ren.keyMaster = function(key,value,name){
 	//console.log( $.type(key) )
@@ -191,8 +146,11 @@ ren.keyMaster = function(key,value,name){
 				ren.event["name"](key);
 				ren.event["reply"](value, key);
 			break;
+			case "function":
+				ren.event[name](value);
+			break;
 	}		
-}
+};
 /*
 ren.current.object = ren.current.array[ren.current.item];
 
@@ -302,6 +260,7 @@ switch(param){
 }*/
 ren.path = {
 	init:'/game/init.json',
+	scenes:'/game/scenes'
 };
 ren.config = {
 	chache:false,
@@ -320,12 +279,15 @@ $.ajax({
 	url:ren.path.init,
 	dataType:"json",
 	success:function(data){
-		ren.game = data;
+		$.extend(ren.game,data);
+		ren.event.jump(ren.game.config.startLabel);
 	},
 	error:function(err){
 		console.error(err);
 	}
 });
-
+$(ren.config.parent).on('click',function(){
+			ren.parse();
+		});
 
 };//ren.init()
