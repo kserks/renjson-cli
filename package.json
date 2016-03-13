@@ -1,7 +1,7 @@
 {
-  "name": "renjson-cli",
-  "version": "0.3.4",
-  "description": "cli utils for renjson",
+  "name": "vnjson-cli",
+  "version": "0.3.7",
+  "description": "cli utils for vnjson",
   "main": "index.js",
   "scripts": {
     "test": "echo hello world"
@@ -9,7 +9,7 @@
   "author": "kserks",
   "license": "MIT license",
   "bin": {
-    "ren": "index.js"
+    "vn": "index.js"
   },
   "dependencies": {
     "directory-tree": "^0.1.1",
