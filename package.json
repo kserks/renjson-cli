@@ -1,6 +1,6 @@
 {
   "name": "vnjson-cli",
-  "version": "0.3.7",
+  "version": "0.3.9",
   "description": "cli utils for vnjson",
   "main": "index.js",
   "scripts": {
@@ -21,9 +21,10 @@
     "open": "0.0.5",
     "slash": "^1.0.0",
     "underscore": "^1.8.3",
-    "walk-folder-tree": "^1.0.1"
+    "walk-folder-tree": "^1.0.1",
+    "yamljs": "^0.2.6"
   },
-  "git": "https://github.com/kserks/renjson-cli",
+  "git": "https://github.com/kserks/vnjson-cli",
   "engines": {
     "node": "5.7.0",
     "npm": "3.6.0"

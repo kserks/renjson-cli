@@ -21,4 +21,6 @@ ren run
 ```batch
 ren build
 ```
-
+[jQuery]: <https://vk.com/vnjson>
+>links
+[jQuery] - My group in VK
