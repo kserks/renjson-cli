@@ -6,6 +6,7 @@
 	-webkit-user-select:none;
 	-moz-user-select:none;
 	cursor:pointer;
+	margin:0px;
 }
 #name_box{
 	width: 200px;
@@ -16,6 +17,7 @@
 	left: 0px;
 	color:grey;
 	font-size:14pt;
+	margin:0px;
 }
 #dialog_box{
 	width:600px;
