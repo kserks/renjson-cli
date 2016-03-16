@@ -1,0 +1,7 @@
+#! /usr/bin/env node
+'use strict'
+let args = process.argv.slice(2);
+const main = require('../lib/main.js');
+args.map(function(key){
+		main[key]();	
+});

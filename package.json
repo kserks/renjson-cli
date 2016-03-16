@@ -9,7 +9,7 @@
   "author": "kserks",
   "license": "MIT license",
   "bin": {
-    "vn": "index.js"
+    "vn": "bin/vn"
   },
   "dependencies": {
     "directory-tree": "^0.1.1",

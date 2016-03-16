@@ -1,0 +1,12 @@
+{
+  "name": "name",
+  "main": "index.html",
+  "version":"0.01",
+  "window": {
+    "min_width": 600,
+    "min_height": 400,
+    "max_width": 600,
+    "max_height": 400,
+    "toolbar": false
+  }
+}
