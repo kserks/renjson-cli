@@ -2,6 +2,27 @@
 'use strict'
 let args = process.argv.slice(2);
 const main = require('../lib/main.js');
+
+if(args[0]==="build"){
+	if(args.length>1){
+		let platforms = [];
+		args.slice(1).map(function(p){
+			platforms.push( p.match(/\w+/gi)[0] );
+
+		});
+		main['build'](platforms);
+	}else{
+		main['build']();
+	}
+}else{
+	main[args[0]]();
+}
+/*
 args.map(function(key){
-		main[key]();	
-});
+if(key==="build"){
+	main[key]();
+}else{
+	main[key]();
+}
+			
+});*/
