@@ -70,7 +70,7 @@ game
 ```
 
 
-####Script lang
+####Script example
 ```yaml 
 - pr: Привет! Давненько не виделись
 - al: Да уж, давненько.
