@@ -33,6 +33,7 @@ vn build --win32 --linux32 --osx32 --win64 --linux64 --osx64
 
 
 ####file structure
+```batch
 game
 ├── build
 │   ├── www
@@ -66,6 +67,7 @@ game
 ├── characters.yml
 ├── package.yml
 └── config.yml
+```
 
 
 ####Script lang
