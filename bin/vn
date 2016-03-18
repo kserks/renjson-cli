@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 'use strict'
+process.title = 'vnjson-cli';
 let args = process.argv.slice(2);
 const main = require('../lib/main.js');
 
@@ -14,6 +15,14 @@ if(args[0]==="build"){
 	}else{
 		main['build']();
 	}
+}else if(args[0]==="run"){
+	if(args.length>1){
+	let platform = args[1].match(/\w+/gi)[0]
+		main['run'](platform);
+	}else{
+		main['run']();
+	}
+
 }else{
 	main[args[0]]();
 }

@@ -4,4 +4,5 @@
 *.png
 *.wav
 npm-debug.log
+*.todo
 

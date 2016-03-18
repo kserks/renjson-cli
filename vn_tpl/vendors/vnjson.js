@@ -102,8 +102,7 @@ var scenePath = [dir,scene].join('/').concat('.json');
 /**
  * Загружаю сцену
  */
-
-$.get(scenePath,function(data){
+$.get("./"+scenePath,function(data){
 		ren.game.scenes[scene] = data;
 		ren.current.Array = data[label];
 		ren.extend();
@@ -270,7 +269,7 @@ ren.config = {
 
 ren.init = function(){
 
-$.get('/game/layers.html',function(layers){
+$.get('./game/layers.html',function(layers){
 	$(ren.config.parent).append(layers);
 });
 

@@ -9,7 +9,7 @@
   "author": "kserks",
   "license": "MIT license",
   "bin": {
-    "vn": "bin/vn"
+    "vn": "./bin/vn"
   },
   "dependencies": {
     "directory-tree": "^0.1.1",
