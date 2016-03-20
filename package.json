@@ -16,7 +16,6 @@
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
     "gulp": "^3.9.0",
-    "minimist": "^1.2.0",
     "my-log": "^0.1.1",
     "npm-root": "^1.1.0",
     "nw-builder": "git+https://github.com/vnjson/nw-builder.git",

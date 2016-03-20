@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 'use strict'
 process.title = 'vnjson-cli';
+
 let args = process.argv.slice(2);
 const main = require('../lib/main.js');
 
