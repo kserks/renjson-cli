@@ -2,14 +2,14 @@
   "name": "vnjson-cli",
   "version": "0.4.2",
   "description": "cli utils for vnjson",
-  "main": "lib/main.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo ..."
   },
   "author": "kserks",
   "license": "MIT license",
   "bin": {
-    "vn": "./bin/vn"
+    "vn": "./lib/index.js"
   },
   "dependencies": {
     "commander": "^2.9.0",
