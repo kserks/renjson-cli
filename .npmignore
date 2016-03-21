@@ -6,3 +6,4 @@ cache/
 .png
 .wav
 .gitignore
+.versionFilesList.json
