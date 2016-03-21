@@ -5,6 +5,8 @@ process.title = 'vnjson-cli';
 let args = process.argv.slice(2);
 const main = require('../lib/main.js');
 
+//const argv = require('optimist');
+
 if(args[0]==="build"){
 	if(args.length>1){
 		let platforms = [];

@@ -1,6 +1,6 @@
 {
   "name": "vnjson-cli",
-  "version": "0.3.9",
+  "version": "0.4.2",
   "description": "cli utils for vnjson",
   "main": "index.js",
   "scripts": {
@@ -12,14 +12,19 @@
     "vn": "./bin/vn"
   },
   "dependencies": {
+    "commander": "^2.9.0",
     "directory-tree": "^0.1.1",
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
     "gulp": "^3.9.0",
+    "json-live": "^0.3.1",
     "my-log": "^0.1.1",
     "npm-root": "^1.1.0",
     "nw-builder": "git+https://github.com/vnjson/nw-builder.git",
+    "nwpack": "0.0.7",
     "open": "0.0.5",
+    "optimist": "^0.6.1",
+    "pkg-dir": "^1.0.0",
     "slash": "^1.0.0",
     "underscore": "^1.8.3",
     "walk-dir-tree": "0.0.4",
