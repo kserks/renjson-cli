@@ -17,6 +17,7 @@
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
     "gulp": "^3.9.0",
+    "mustache": "^2.2.1",
     "my-log": "^0.1.1",
     "nw-builder": "git+https://github.com/vnjson/nw-builder.git",
     "open": "0.0.5",
