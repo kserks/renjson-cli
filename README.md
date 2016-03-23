@@ -1,17 +1,15 @@
 ##renjson-cli
-
-####install via npm
+>Command line utilits for create visual novel
+####installation via npm
 ```batch
 npm install vnjson-cli -g
 ```
-
->if(module.parent)
-
-```batch 
-npm install vnjson-cli --save
+####help
+```batch
+vn help
 ```
 
-###initialize project in current directory
+####initialize project in the current directory
 ```batch
 vn init
 ```
@@ -28,7 +26,7 @@ vn build
 ```
 ####build platforms
 ```batch
-vn build --win32 --linux32 --osx32 --win64 --linux64 --osx64
+vn build win32 linux32 osx32 win64 linux64 osx64
 ```
 ####run build
 ```batch
@@ -37,6 +35,10 @@ vn run --win32
 ####
 
 ####file structure
+```batch
+vn tree
+```
+
 ```batch
 game
 ├── build
