@@ -14,8 +14,10 @@
   "dependencies": {
     "commander": "^2.9.0",
     "copy": "^0.2.0",
+    "demon": "^1.4.1",
     "directory-tree": "^0.1.1",
     "express": "^4.13.3",
+    "forever-monitor": "^1.7.0",
     "fs-extra": "^0.26.2",
     "gulp": "^3.9.0",
     "mustache": "^2.2.1",
