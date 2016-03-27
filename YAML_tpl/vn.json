@@ -1,5 +1,5 @@
 {
-	"port":8080,
+	"port":8880,
 	"host":"localhost",
 	"protocol":"http://",
 	"browser":"chrome",

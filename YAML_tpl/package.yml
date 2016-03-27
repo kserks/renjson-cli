@@ -1,4 +1,5 @@
 name: project name
+main: index.html
 description: My simple visual novel
 version: 0.0.1
 author: username
@@ -10,5 +11,6 @@ window:
   min_height: 400
   max_width: 600
   max_height: 400
-  debug: false
+  frame: true
+  toolbar: false
   charset: utf-8
