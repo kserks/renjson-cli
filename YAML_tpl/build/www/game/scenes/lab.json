@@ -6,7 +6,8 @@
       "sound": "errors"
     },
     {
-      "pr": "Ты так ничему и не научилась.."
+      "pr": "Ты так ничему и не научилась..",
+      "jump": "lab/start"
     }
   ],
   "start": [
@@ -15,7 +16,7 @@
     },
     {
       "al": "Да уж, давненько.",
-      "scene": "room_hero",
+      "scene": "hero_room",
       "audio": "song1"
     },
     {
@@ -26,8 +27,11 @@
     },
     {
       "pr": "Алиса не тебе меня поучать!",
-      "jump": "start/chapter2"
+      "jump": "start/chapter1"
     }
   ],
-  "preload": []
+  "preload": [
+    "/assets/chasy.mp3",
+    "/assets/hero_room.png"
+  ]
 }

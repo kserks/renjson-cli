@@ -1,12 +1,12 @@
 {
   "chapter1": [
     {
-      "pr": "Привет! Давненько не виделись"
+      "pr": "Привет! Давненько не виделись",
+      "scene": "background",
+      "audio": "song1"
     },
     {
-      "al": "Да уж, давненько.",
-      "scene": "room_hero",
-      "audio": "song1"
+      "al": "Да уж, давненько."
     },
     {
       "pr": "Хорош болтать! Погнали в лабараторию"
@@ -26,10 +26,12 @@
       "sound": "errors"
     },
     {
-      "pr": "Ты так ничему и не научилась.."
+      "pr": "Ты так ничему и не научилась..",
+      "jump": "lab/lab"
     }
   ],
   "preload": [
-    "/assets/assets"
+    "/assets/background.png",
+    "/assets/right_ladya.png"
   ]
 }
