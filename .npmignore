@@ -1,7 +1,7 @@
 .git
 node_modules/
 cache/
-.todo
+
 .jpg
 .png
 .wav

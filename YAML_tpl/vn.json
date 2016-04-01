@@ -1,8 +1,7 @@
 {
 	"port":8880,
-	"host":"localhost",
-	"protocol":"http://",
 	"browser":"chrome",
+	"debug":true,
 	"build":{
 		"buildDir":"./build",
 		"version": "0.12.2",

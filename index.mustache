@@ -14,13 +14,14 @@
 <section id="game">
 
 </section>
-<script type="text/javascript">
+<script  src="./vendors/init.js"></script>
 
-	$(document).ready(function($){
-		ren.init();
-
-	});
-</script>
+{{#debug?}}
+<section class="debug">
+  	<h1 id="debug" style="color:red">debug</h1>
+</section>
+<script src="http://localhost:{{port}}/debug.js"></script>
+{{/debug?}}
 
 </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "config": {
+    "startLabel": "start/chapter1",
+    "lazyLoad": false,
+    "parallax": false
+  },
+  "characters": {
+    "pr": {
+      "name": "Профессор",
+      "color": "green"
+    },
+    "al": {
+      "name": "Алиса",
+      "color": "red"
+    }
+  }
+}

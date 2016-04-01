@@ -1,0 +1,1 @@
+$('#debug').text("label: "+vn.current.label);
