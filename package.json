@@ -1,13 +1,13 @@
 {
   "name": "vnjson-cli",
-  "version": "0.4.2",
+  "version": "0.4.4",
   "description": "cli utils for vnjson",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo ..."
   },
   "author": "kserks",
-  "license": "MIT license",
+  "license": "MIT",
   "bin": {
     "vn": "./lib/index.js"
   },
@@ -16,6 +16,7 @@
     "directory-tree": "^0.1.1",
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
+    "gently-copy": "^1.1.5",
     "mustache": "^2.2.1",
     "my-log": "^0.1.1",
     "nw-builder": "git+https://github.com/vnjson/nw-builder.git",
@@ -24,10 +25,12 @@
     "slash": "^1.0.0",
     "underscore": "^1.8.3",
     "walk-dir-tree": "0.0.4",
-    "walk-folder-tree": "^1.0.1",
     "yamljs": "^0.2.6"
   },
-  "git": "https://github.com/kserks/vnjson-cli",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kserks/vnjson-cli.git"
+  },
   "engines": {
     "node": "5.7.0",
     "npm": "3.6.0"
