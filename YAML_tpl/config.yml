@@ -1,3 +1,4 @@
 startLabel: start/chapter1
 lazyLoad: false
 parallax: false
+##autorun:   parallax

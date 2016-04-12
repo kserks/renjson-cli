@@ -1,7 +1,6 @@
 {
-	"port":8880,
-	"browser":"chrome",
-	"debug":false,
+	"port":8889,
+
 	"build":{
 		"buildDir":"./build",
 		"version": "0.12.2",

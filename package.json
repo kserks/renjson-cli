@@ -1,7 +1,7 @@
 {
   "name": "vnjson-cli",
   "version": "0.4.4",
-  "description": "cli utils for vnjson",
+  "description": "Cli utils for vnjson",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo ..."
@@ -17,7 +17,6 @@
     "express": "^4.13.3",
     "fs-extra": "^0.26.2",
     "gently-copy": "^1.1.5",
-    "mustache": "^2.2.1",
     "my-log": "^0.1.1",
     "nw-builder": "git+https://github.com/vnjson/nw-builder.git",
     "open": "0.0.5",

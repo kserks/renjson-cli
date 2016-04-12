@@ -48,19 +48,54 @@ vn.event = {
 			
 	},
 	center:function(value){
-		console.log('center: '+value);
+		$('#center')
+			.css('background-image','url(./game/assets/'+value+'.png)');
+	},
+	show:function(value){
+		$('#center')
+			.css('background-image','url(./game/assets/'+value+'.png)');
+	},	
+	left:function(value){
+		$('#left')
+			.css('background-image','url(./game/assets/'+value+'.png)');
+
+	},
+	right:function(value){
+		$('#right')
+			.css('background-image','url(./game/assets/'+value+'.png)');
+
 	},
 	audio:function(value){
-		console.log("audio: "+value+".mp3");
+		var song = "./game/assets/"+value+".mp3";
+		var sound = new Howl({
+  			urls: [song],
+  			autoplay:true,
+  			loop:true
+		}).play();
 	},
 	sound:function(value){
-		console.log("sound: "+value+".mp3");
+		var song = "./game/assets/"+value+".mp3";
+		var sound = new Howl({
+  			urls: [song],
+  			autoplay:true
+		}).play();
 	},
 	scene:function(value){
 
-		//console.warn(typeof value);//{ext:"jpg"}
 		$('#scene')
 			.css('background-image','url(./game/assets/'+value+'.png)');
+	},
+	shake:function(elem) {
+		$("#"+elem).animate({"left":"+=8px"}, 50)
+					.animate({"left":"-=8px"}, 50)
+					.animate({"left":"+=8px"}, 50)
+					.animate({"left":"-=8px"}, 50);
+      },
+	bump:function(elem) {
+		$("#"+elem).animate({"bottom":"+=8px"}, 50)
+                    .animate({"bottom":"-=8px"}, 50)
+                    .animate({"bottom":"+=8px"}, 50)
+                    .animate({"bottom":"-=8px"}, 50);
 	}
 
 };
@@ -100,6 +135,49 @@ vn.extend = function(){
 
 	vn.event = $.extend(vn.event,characters);
 };
+vn.isImage = function(data){
+		var reg = /\.(png|jpg|jpeg)$/gi;
+		return reg.test(data);
+};
+
+vn.isAudio = function(data){
+		var reg = /\.(mp3|ogg|wav)$/gi;
+		return reg.test(data);
+}
+
+vn.imagePreload = function(assets){
+
+
+var IMGs = new Array();
+/**
+ * @ Отделяю .mp3 от .png
+ */
+assets.forEach(function(src){
+	 if(vn.isImage(src)){
+	 	IMGs.push(vn.path.game+src);
+	 }
+});
+
+var i = 1;	
+var len = IMGs.length;
+function counter(){
+	
+	console.log(i+'/'+len);
+	i++;
+}
+
+$.imgpreload(IMGs,{
+    each: function(){
+        counter();
+    },
+    all: function(){
+    	console.info('Изображения загружены');
+        vn.parse();
+        
+    }
+});	
+
+}
 vn.getScene = function(scene,label){
 
 var dir = vn.path.scenes;
@@ -114,8 +192,8 @@ $.get(scenePath,function(data){
 		vn.game.scenes[scene] = data;
 		vn.current.Array = data[label];
 		vn.extend();
-		vn.parse();
-		
+
+	vn.imagePreload(data['preload']);
 
 });
 
@@ -142,6 +220,10 @@ if(vn.current.Array.length<=vn.current.Number){
 }
 
 };//vn.parse()
+/*
+vn.current.object = vn.current.array[vn.current.item];
+
+*/
 
 vn.keyMaster = function(key,value,name){
 	//console.log( $.type(key) )
@@ -264,7 +346,8 @@ switch(param){
 }*/
 vn.path = {
 	init:'./game/init.json',
-	scenes:'./game/scenes'
+	scenes:'./game/scenes',
+	game:'./game'
 };
 vn.config = {
 	chache:false,
