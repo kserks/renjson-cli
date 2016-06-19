@@ -1,10 +1,10 @@
-'use strict'
+/*
 var path = require('path');
-const slash = require('slash');
-const pkgDir = require('pkg-dir');
-const root = slash(pkgDir.sync(__dirname));
+const 
+
+
 const yaml_tpl = root + '/YAML_tpl/';
-const projectDir = slash(process.cwd());
+
 
 const build = `${projectDir}/build/www`;
 module.exports = {
@@ -17,3 +17,15 @@ module.exports = {
              cache:`${root}/cache`,
               conf:`${projectDir}/vn.json`
 };
+*/
+const
+  pkgDir         = require('pkg-dir'),
+  slash          = require('slash');
+
+let package_root = slash(pkgDir.sync(__dirname));
+let project = slash(process.cwd());
+module.exports = {
+			package_root : package_root,
+	            init_tpl : `${package_root}/init_tpl`,
+	             project : project
+}

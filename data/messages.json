@@ -1,9 +1,10 @@
 {
-	       "created" : "Project created",
+	       "created" : "Project has been created",
 	      "replExit" : "Enter Ctrl+C for the exit in the repl",
 	         "build" : "Project building",
 	         "vn_rm" : "Files removed",
 	           "url" : "Open the browser url:",
-	   "cmdNotFound" : "Command undefined"
+	   "cmd404" : ["Command","undefined"],
+	   "err_rm":"Uncorect path to the project"
 }
 
