@@ -26,6 +26,6 @@ let package_root = slash(pkgDir.sync(__dirname));
 let project = slash(process.cwd());
 module.exports = {
 			package_root : package_root,
-	            init_tpl : `${package_root}/init_tpl`,
+	            deploy : `${package_root}/deploy`,
 	             project : project
 }

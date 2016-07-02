@@ -3,19 +3,19 @@ const
   dir              = require('./dirname'),
   gutil            = require('gulp-util'),
   msg              = require('../data/messages.json'),
-  fs               = require('fs-extra');
-
+  fs               = require('fs-extra'),
+  server           = require('./server');
 module.exports = {
 	init:(name,projects_dir,callback)=>{
 
 		if(projects_dir&&name&&callback){
-			fs.copy(dir['init_tpl'],`${projects_dir}/${name}`,(err)=>{
+			fs.copy(dir['deploy'],`${projects_dir}/${name}`,(err)=>{
 					callback(err);
 			});
 			
 		}else{
 			if(name){
-				fs.copy(dir['init_tpl'], `${dir['project']}/${name}`,(err)=>{
+				fs.copy(dir['deploy'], `${dir['project']}/${name}`,(err)=>{
 					if(err){
 						gutil.log(gutil.colors.red(err));
 					}else{
@@ -23,7 +23,7 @@ module.exports = {
 					}
 				});
 			}else{
-				fs.copy(dir['init_tpl'], dir['project'],(err)=>{
+				fs.copy(dir['deploy'], dir['project'],(err)=>{
 					if(err){
 						gutil.log(gutil.colors.red(err));
 					}else{
@@ -55,11 +55,15 @@ module.exports = {
 
 
 	},
-	run:()=>{
+	run:(port,callback)=>{
 
 			//build.build(); /**build www*/
-			//server.start();
-			gutil.log(gutil.colors.magenta("run"));
+			
+			if(port&&callback){
+				server.start(port,callback);
+			}else{
+				gutil.log(gutil.colors.magenta("run"));
+			}
 	},
 
 	build:()=>{

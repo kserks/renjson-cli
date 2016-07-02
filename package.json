@@ -14,7 +14,7 @@
   "dependencies": {
     "commander": "^2.9.0",
     "directory-tree": "^0.1.1",
-    "express": "^4.13.3",
+    "express": "^4.14.0",
     "fs-extra": "^0.26.2",
     "gently-copy": "^1.1.5",
     "gulp": "^3.9.1",

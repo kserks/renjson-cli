@@ -1,0 +1,83 @@
+{
+  "labels":{
+  "chapter1": [
+    {
+      "pr": "Привет! Давненько не виделись",
+      "scene": "background",
+      "sound": "chasy"
+    },
+    {
+      "ll": "Да уж, давненько.",
+      "left": "lusil"
+    },
+    {
+      "pr": "Хорош болтать! Погнали в лабараторию",
+      "snake": "left",
+      "right": "hero"
+    },
+    {
+      "ll": "Профессор вы слишком торопитесь. Это еще ни кому не помогало."
+    },
+    {
+      "pr": "Алиса не тебе меня поучать!",
+      "jump": "start/chapter2"
+    }
+  ],
+  "chapter2": [
+    {
+      "al": "И как это понимать? Разве мы не должны позаботиться об этих ошибках?"
+    },
+    {
+      "pr": "Ты так ничему и не научилась..",
+      "jump": "lab/lab"
+    }
+  ]
+  },
+  "assets": {
+      "images":[
+         {
+          "url":"assets/background.png",
+          "size":"123kb",
+          "extname":".png",
+          "name":"background"
+         },
+         {
+          "url":"assets/hero.png",
+          "size":"223kb",
+          "extname":".png",
+          "name":"hero"
+         },
+         {
+          "url":"assets/ladya.png",
+          "size":"191kb",
+          "extname":".png",
+          "name":"ladya"
+         },
+         {
+          "url":"assets/lusil.png",
+          "size":"231kb",
+          "extname":".png",
+          "name":"lusil"
+         }
+      ],
+      "audio":[
+        {
+          "url":"assets/song1.mp3",
+          "size":"911kb",
+          "extname":".mp3",
+          "name":"song1"
+        }
+      ]
+
+  },
+   "characters":{
+    "pr": {
+      "name": "Профессор",
+      "color": "green"
+    },
+    "ll": {
+      "name": "Люсиль",
+      "color": "grey"
+    }
+  }
+}
