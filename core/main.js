@@ -55,12 +55,12 @@ module.exports = {
 
 
 	},
-	run:(port,callback)=>{
+	run:(port,pathname,callback)=>{
 
 			//build.build(); /**build www*/
 			
-			if(port&&callback){
-				server.start(port,callback);
+			if(port&&pathname&&callback){
+				server.start(port,pathname,callback);
 			}else{
 				gutil.log(gutil.colors.magenta("run"));
 			}
