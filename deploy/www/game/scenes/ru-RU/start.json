@@ -1,83 +1,55 @@
 {
-  "labels":{
   "chapter1": [
     {
-      "pr": "Привет! Давненько не виделись",
-      "scene": "background",
-      "sound": "chasy"
+      "pr": "Привет! Давненько не виделись"
     },
     {
-      "ll": "Да уж, давненько.",
-      "left": "lusil"
+      "al": "Да уж, давненько.",
+      "scene": "room_hero",
+      "audio": "song1"
     },
     {
       "pr": "Хорош болтать! Погнали в лабараторию",
-      "snake": "left",
-      "right": "hero"
+      "alert":"hello urod"
     },
     {
-      "ll": "Профессор вы слишком торопитесь. Это еще ни кому не помогало."
+      "al": "Профессор вы слишком торопитесь. Это еще ни кому не помогало."
     },
     {
       "pr": "Алиса не тебе меня поучать!",
-      "jump": "start/chapter2"
+       "left":"baka",
+      "jump": "lab/lab"
     }
   ],
   "chapter2": [
     {
-      "al": "И как это понимать? Разве мы не должны позаботиться об этих ошибках?"
+      "al": "И как это понимать? Разве мы не должны позаботиться об этих ошибках?",
+      "show": "errors",
+      "sound": "errors"
     },
     {
-      "pr": "Ты так ничему и не научилась..",
-      "jump": "lab/lab"
-    }
-  ]
-  },
-  "assets": {
-      "images":[
-         {
-          "url":"assets/background.png",
-          "size":"123kb",
-          "extname":".png",
-          "name":"background"
-         },
-         {
-          "url":"assets/hero.png",
-          "size":"223kb",
-          "extname":".png",
-          "name":"hero"
-         },
-         {
-          "url":"assets/ladya.png",
-          "size":"191kb",
-          "extname":".png",
-          "name":"ladya"
-         },
-         {
-          "url":"assets/lusil.png",
-          "size":"231kb",
-          "extname":".png",
-          "name":"lusil"
-         }
-      ],
-      "audio":[
-        {
-          "url":"assets/song1.mp3",
-          "size":"911kb",
-          "extname":".mp3",
-          "name":"song1"
-        }
-      ]
+      "pr": "Ты так ничему и не научилась.."
 
-  },
-   "characters":{
-    "pr": {
+    }
+  ],
+  "preload": [
+    "/assets/assets"
+  ],
+  "characters": [
+    {
+      "aliase": "pr",
       "name": "Профессор",
       "color": "green"
     },
-    "ll": {
+    {
+      "aliase": "al",
+      "name": "Алиса",
+      "color": "red"
+    },
+    {
+      "aliase": "ll",
       "name": "Люсиль",
       "color": "grey"
     }
-  }
+  ]
 }

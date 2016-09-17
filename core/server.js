@@ -7,8 +7,8 @@ module.exports.start = function(port,pathname,callback){
 
 if(port&&pathname&&callback){
 	let app = express();
-	let index = fs.readFileSync(`${pathname}/www/index.html`);
-	app.use('/', express.static(pathname+'/www'));
+	let index = fs.readFileSync(`${pathname}/cache/index.html`);
+	app.use('/', express.static(pathname+'/cache'));
 	app.get("/", function(req, res){
 		res.send(index);
 	});
@@ -19,8 +19,8 @@ if(port&&pathname&&callback){
 var url = `http://localhost:9090`;
 
 	let app = express();
-	let index = fs.readFileSync(`${dir['project']}/www/index.html`);
-	app.use('/', express.static(dir['project']+'/www'));
+	let index = fs.readFileSync(`${dir['project']}/cache/index.html`);
+	app.use('/', express.static(dir['project']+'/cache'));
 	app.get("/", function(req, res){
 		res.send(index);
 	});
