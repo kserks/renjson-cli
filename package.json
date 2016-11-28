@@ -1,28 +1,18 @@
 {
   "name": "vnjson-utils",
-  "version": "0.4.5",
+  "version": "0.4.9",
   "description": "Utils for vnjson",
-  "main": "core/main.js",
-  "scripts": {
-    "test": "echo ..."
-  },
+  "main": "index.js",
   "author": "kserks",
   "license": "MIT",
-  "bin": {
-    "vnjson": "./bin/vnjson"
-  },
   "dependencies": {
-    "commander": "^2.9.0",
     "directory-tree": "^0.1.1",
     "express": "^4.14.0",
     "fs-extra": "^0.26.2",
     "gently-copy": "^1.1.5",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-util": "^3.0.7",
     "gulp-zip": "^3.2.0",
-    "my-log": "^0.1.1",
-    "nw-builder": "git+https://github.com/vnjson/nw-builder.git",
     "pkg-dir": "^1.0.0",
     "slash": "^1.0.0",
     "underscore": "^1.8.3",
@@ -31,10 +21,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/kserks/vnjson-cli.git"
+    "url": "git+ssh://git@github.com/vnjson/vnjson-utils.git"
   },
   "engines": {
-    "node": "5.7.0",
-    "npm": "3.6.0"
+    "node": "7.0.0",
+    "npm": "3.1.9"
   }
 }
