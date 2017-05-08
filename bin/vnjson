@@ -1,0 +1,102 @@
+#!/usr/bin/env node
+const pkg = require('../package');
+process.title = "vnjson@"+require('../package').version;
+
+const
+  index                         = require('../lib/index');
+
+
+
+const vnjs = require('vnjson-cmd');
+const path = require('path');
+
+vnjs.on('build', function(options){
+    index("build", {
+      platforms: options.platforms,
+      path: process.cwd(),
+
+      notify: function(err, msg){
+        if(err){
+          console.error(err);
+        }
+        console.log(msg);
+      }
+    });
+
+});
+
+vnjs.on('init', function(options){
+  let _path = "";
+    if(options._[1]){
+      _path = options._[1];
+    }else{
+      _path = process.cwd();
+    }
+    index("init", {
+                path: _path,
+                notify: function(err,msg){
+                  if(err){
+                    console.error("[ init ]:" + _path, err);
+                    
+                  }
+                  console.log("[ init ]: "+ msg);
+                },
+                scope: '-g'
+              });
+});
+
+vnjs.on('start', function(options){
+  
+  let port = 8080;
+    if(options.port){
+      port = options.port;
+    }
+    index("start", { 
+                      port, 
+                      notify: function(err){
+                          if(err){
+                            console.error(err);
+                            process.exit(0);
+                          }
+                          console.log('open this addres in  your browser');
+                          console.log('http://localhost:'+port);
+                          console.log('Enter Ctrl+C for the exit');
+                      },
+                      path: process.cwd()
+                    }
+    );
+   // process.exit(1);
+});
+
+
+
+
+
+
+
+
+
+
+vnjs.on('help', function(){
+  cmdHelp.forEach(function(str){
+    console.log(str);
+  })
+});
+
+
+
+
+vnjs.parse();
+
+
+var cmdHelp = [
+
+      '___________________________help_________________________',
+      '                                                    ',
+      '  init [ --path="./path" ]- Инициализировать проект',
+      '  start [ --port=9090 ] - Запустить проект',
+      '  build [ --platforms=local,www,winxp,linux ] - Собирает',
+      '             проект под разные платформы.',
+      '  help - Справка по командам и оциям ',
+      '_________________________________________________________'
+];

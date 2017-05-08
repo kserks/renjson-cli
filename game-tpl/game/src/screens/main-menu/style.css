@@ -1,0 +1,38 @@
+/*
+ * @main-menu
+ */
+start-menu{
+  width:150px;
+  height:150px;
+  /*border: 1px dotted grey;*/
+  position: absolute;
+  left:550px;
+  top: 310px;
+  font-size: 16pt;
+  font-family:'Comic Sans MS';
+
+}
+
+.start-menu--item{
+  cursor: pointer;
+
+}
+li{ 
+  list-style-type: none; /* Убираем маркеры */
+}
+a:link{
+  text-decoration: none;
+  color: #9AB5C5;
+}
+a:visited{
+  color: #9AB5C5;
+}
+a:hover{
+  color: #C9DAE5;
+}
+.powered-by{
+  color: #999;
+  position: relative;
+  top: 450px;
+  padding: 5px;
+}
