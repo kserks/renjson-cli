@@ -1,11 +1,8 @@
 /node_modules
-/cache
-/_hlam
-*.jpg
-*.png
-*.wav
+
 npm-debug.log
-*.todo
 
 
-.versionFilesList.json
+
+*.sublime-project
+*.sublime-workspace

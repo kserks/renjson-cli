@@ -11,16 +11,20 @@ const vnjs = require('vnjson-cmd');
 const path = require('path');
 
 vnjs.on('build', function(options){
+  function notify(err, msg){
+        if(err){
+          console.error(err);
+          process.exit(0);
+        }
+        console.log(msg);
+        process.exit(0);
+     };
+
     index("build", {
       platforms: options.platforms,
       path: process.cwd(),
-
-      notify: function(err, msg){
-        if(err){
-          console.error(err);
-        }
-        console.log(msg);
-      }
+      local: options.local||'en-US',
+      notify,
     });
 
 });
@@ -37,11 +41,13 @@ vnjs.on('init', function(options){
                 notify: function(err,msg){
                   if(err){
                     console.error("[ init ]:" + _path, err);
+                    process.exit(0);
                     
                   }
-                  console.log("[ init ]: "+ msg);
+                   console.log("[ init ]: "+ msg);
+                   process.exit(0);
                 },
-                scope: '-g'
+                global: true
               });
 });
 
