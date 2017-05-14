@@ -1,6 +1,6 @@
 {
   "name": "vnjson-cli",
-  "version": "0.5.7",
+  "version": "0.6.6",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -15,30 +15,9 @@
   "dependencies": {
     "express": "*",
     "fs-extra": "*",
-    "run-sequence": "*",
-    "autoprefixer": "^6.7.7",
-    "babel-preset-env": "^1.4.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^6.4.0",
-    "gulp-posthtml": "^3.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.6.0",
-    "postcss-tag-prefixer": "^1.0.1",
-    "posthtml-alt-always": "^1.0.1",
-    "posthtml-remove-tags": "*",
-    "posthtml-style-to-file": "^0.1.1",
-    "postcss-css-reset": "^1.0.2",
-    "postcss-selector-parser": "^2.2.3",
-    "posthtml-script-to-file": "*",
-    "posthtml-vnjson-screen": "*",
-    "vnjson-cmd": "*",
     "npm-root": "*",
-    "scenes-to-json": "*",
-    "postcss-tag-to-id": "*"
+    "vnjson-local-builder": "*",
+    "vnjson-cmd": "*"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }

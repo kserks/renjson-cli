@@ -17,7 +17,7 @@ vnjs.on('build', function(options){
           process.exit(0);
         }
         console.log(msg);
-        process.exit(0);
+
      };
 
     index("build", {
