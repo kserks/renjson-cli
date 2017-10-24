@@ -3,7 +3,13 @@
 ## Why Use This?
 
 If you’re getting started with [`vnjson.js`](https://gihub.com/vnjson/vnjson.js), use [`vnjson-cli`](https://github.com/vnjson/vnjson.cli) to automate the build of your visual novel. 
-
+<!--
+## Preparations
+* install [nodejs](https://nodejs.org/en/)
+* add enviroment variable [`PATH`](https://stackoverflow.com/a/28545224)
+* Download the [git](https://git-scm.com/downloads)
+* Run git and enter `vnjson-cli start init`
+-->
 ## Installation
 ```bash
 npm install -g vnjson-cli
