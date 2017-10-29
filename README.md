@@ -26,6 +26,19 @@ vnjson init
 vnjson start
 
 ```
+
+## User scripts
+__`label.yaml`__
+```yaml
+- print: hello world
+- print: It's my simple visual novel
+  background: bg1
+  audio:
+    id: mainTheme
+    loop: false
+    volume: 0.4
+- jump: label2
+```
   * Если все прошло без ошибок, то откройте браузер
     по адресу [`http://localhost:8080`](http://localhost:8080)
   * По данному адресу должна появиться только что созданая визуальная новела.
