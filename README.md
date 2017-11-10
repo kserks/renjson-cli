@@ -1,33 +1,6 @@
-# vnjson-cli
-
-## Why Use This?
-
-If you’re getting started with [`vnjson.js`](https://gihub.com/vnjson/vnjson.js), use [`vnjson-cli`](https://github.com/vnjson/vnjson.cli) to automate the build of your visual novel. 
-<!--
-## Preparations
-* install [nodejs](https://nodejs.org/en/)
-* add enviroment variable [`PATH`](https://stackoverflow.com/a/28545224)
-* Download the [git](https://git-scm.com/downloads)
-* Run git and enter `vnjson-cli start init`
--->
-## Installation
-```bash
-npm install -g vnjson-cli
-```
 
 
-
-## How use it?
-
-```bash
-mkdir my-simple-novel
-cd my-simple-novel
-vnjson init
-vnjson start
-
-```
-
-## User scripts
+## User scripts src
 __`label.yaml`__
 ```yaml
 - print: hello world
@@ -39,20 +12,89 @@ __`label.yaml`__
     volume: 0.4
 - jump: label2
 ```
-  * Если все прошло без ошибок, то откройте браузер
-    по адресу [`http://localhost:8080`](http://localhost:8080)
-  * По данному адресу должна появиться только что созданая визуальная новела.
+## User scripts dist
+```json
+{
+  "label": [
+    {"print": "hello world"},
+    {
+      "print": "It's my simple visual novel",
+      "background": "bg1",
+      "audio": {
+        "id": "mainTheme",
+        "loop": false,
+        "volume": 0.4
+      }
+    },
+    {"jump": "label2"}
+  ],
+  
+  "label2": []
+}
+```
 
-  * Установите node.js если он у вас не установлен.
-  * Инструкция по работе с консолью. 
-  * Скачайте vnjson-cli из npm репозитория
+
+## Game src
+
+```plane_text
+src
+├── scenes
+│   ├── start
+│   │   ├── assets
+│   │   │     ├── background.png
+│   │   │     └── audio.mp3
+│   │   ├── label1.yaml
+│   │   └── chapter2.yaml
+│   └── lab
+│       ├── start.yaml
+│       └── lab.yaml
+├── plugins
+│   ├── my-simple-plugin
+│   │   ├── screen.html
+│   │   ├── style.css
+│   │   └── index.js
+│   └── plugin
+│       └── index.js
+├── icons
+│   ├── favicon.png    //140kB
+│   └── logo32x32.png  //219kb
+└── package.yaml
+```
 
 
-  * Убедитесь что директория с сохранеными глобально node модулями
-    находится в переменной path.
-  * Откройте эмулятор терминала или консоль и запустите
+## Game dist
+```plane_text
+public/game
+├── assets
+│   ├── room_hero.png
+│   ├── prof_norm.png
+│   └── errors.mp3
+├── icons
+│   ├── favicon.png    //54kB
+│   └── logo32x32.png  //113kb
+├── scenes
+│   ├── ru-RU
+│   │   ├── start.json
+│   │   └── lab.json
+│   └── en-US
+│       ├── start.json
+│       └── lab.json
+├── style.css
+├── plugins.bundle.js
+└── screens.html
 
+```
 
+[spec.game-dir-tree](https://github.com/vnjson/spec/blob/master/game-dir-tree.md)
+
+___
+
+### ToDo
+
+- [x] yaml scenes to json
+- [ ] png compressor
+- [ ] audio sprite
+- [ ] audio format converter
 
 
 
