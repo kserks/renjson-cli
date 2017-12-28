@@ -3,13 +3,12 @@ const pkg = require('../package');
 process.title = "vnjson@"+require('../package').version;
 
 const
-  index                         = require('../lib/index');
+  index                         = require('../index');
 
+index.init()
 
-
-const vnjs = require('vnjson-cmd');
-const path = require('path');
-
+//const path = require('path');
+/*
 vnjs.on('build', function(options){
   function notify(err, msg){
         if(err){
@@ -75,11 +74,11 @@ vnjs.on('start', function(options){
 });
 
 
+*/
 
 
 
-
-
+/*
 
 
 
@@ -106,3 +105,4 @@ var cmdHelp = [
       '  help - Справка по командам и оциям ',
       '_________________________________________________________'
 ];
+*/

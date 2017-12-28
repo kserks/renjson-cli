@@ -1,0 +1,4 @@
+[
+  "../modules/vn-init",
+  "../modules/scenes-to-json"
+]
