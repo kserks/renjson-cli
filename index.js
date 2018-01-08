@@ -10,7 +10,7 @@ const scenesBuild               = require('./lib/scenes-build');
 const pluginsBuilder =  require('./lib/plugins-builder');
 const staticServer = require('./lib/server');
 
-const PORT = 9090;
+const del = require('del');
 
 
 
@@ -26,10 +26,19 @@ const PORT = 9090;
 require('./modules.json').map( m=>require(m) );
 
 function run(){
+	var tmpBuild = join(projectDir, './build/tmp/game');
+		del.sync([tmpBuild, '!icons']);
+	
+	//=>server
+	var config = require(join(projectDir, '/vn.json'));
+	const PORT = config.port;
+const LOCAL = config.local;
 	/*
 		Запускаем сервер, собираем сцены и плагины
 
 	*/
+	 scenesBuild(projectDir, LOCAL);
+	 pluginsBuilder(projectDir, 'all');
 	 staticServer.run(join(projectDir, './build/tmp' ), PORT, projectDir);
 	 log.warn(`Open in your browser - http://localhost:${PORT}`);
 	 log.warn('Press Ctrl+C for kill process');	
@@ -53,8 +62,7 @@ vnjs.emit('project-init', projectDir, function (err){
 	/*
 	 * Первая сборка плагинов и сцены
 	 */
-	scenesBuild(projectDir/*,local*/);
-	pluginsBuilder(projectDir);
+
 	//buildPlugins();
 	/*
 	 * Событие сборки проекта
@@ -63,8 +71,9 @@ vnjs.emit('project-init', projectDir, function (err){
 	/*
  	 * Сообщение
 	 */
-	 log.info('Project has been created');
 
+	 log.info('Project has been created');
+	
 });//emit
 
 
