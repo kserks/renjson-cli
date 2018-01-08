@@ -1,108 +1,19 @@
 #!/usr/bin/env node
 const pkg = require('../package');
 process.title = "vnjson@"+require('../package').version;
-
+var argv = require('minimist')(process.argv.slice(2));
 const
   index                         = require('../index');
 
-index.init()
-
-//const path = require('path');
-/*
-vnjs.on('build', function(options){
-  function notify(err, msg){
-        if(err){
-          console.error(err);
-          process.exit(0);
-        }
-        console.log(msg);
-
-     };
-
-    index("build", {
-      platforms: options.platforms,
-      path: process.cwd(),
-      local: options.local||'en-US',
-      notify,
-    });
-
-});
-
-vnjs.on('init', function(options){
-  let _path = "";
-    if(options._[1]){
-      _path = options._[1];
-    }else{
-      _path = process.cwd();
-    }
-    index("init", {
-                path: _path,
-                notify: function(err,msg){
-                  if(err){
-                    console.error("[ init ]:" + _path, err);
-                    process.exit(0);
-                    
-                  }
-                   console.log("[ init ]: "+ msg);
-                   process.exit(0);
-                },
-                global: true
-              });
-});
-
-vnjs.on('start', function(options){
-  
-  let port = 8080;
-    if(options.port){
-      port = options.port;
-    }
-    index("start", { 
-                      port, 
-                      notify: function(err){
-                          if(err){
-                            console.error(err);
-                            process.exit(0);
-                          }
-                          console.log('open this addres in  your browser');
-                          console.log('http://localhost:'+port);
-                          console.log('Enter Ctrl+C for the exit');
-                      },
-                      path: process.cwd()
-                    }
-    );
-   // process.exit(1);
-});
 
 
-*/
+var key = argv._[0];
 
+if(key==='init'){
+  index.init()
+}else if(key==="run"){
+  index.run();
+}else{
+  console.log('Uknown paramm')
+}
 
-
-/*
-
-
-
-vnjs.on('help', function(){
-  cmdHelp.forEach(function(str){
-    console.log(str);
-  })
-});
-
-
-
-
-vnjs.parse();
-
-
-var cmdHelp = [
-
-      '___________________________help_________________________',
-      '                                                    ',
-      '  init [ --path="./path" ]- Инициализировать проект',
-      '  start [ --port=9090 ] - Запустить проект',
-      '  build [ --platforms=local,www,winxp,linux ] - Собирает',
-      '             проект под разные платформы.',
-      '  help - Справка по командам и оциям ',
-      '_________________________________________________________'
-];
-*/
