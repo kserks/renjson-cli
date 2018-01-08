@@ -1,19 +1,22 @@
 #!/usr/bin/env node
 const pkg = require('../package');
-process.title = "vnjson@"+require('../package').version;
+process.title = "vnjson";
 var argv = require('minimist')(process.argv.slice(2));
 const
   index                         = require('../index');
 
 
 
-var key = argv._[0];
 
-if(key==='init'){
+
+if(argv._[0]==='init'){
   index.init()
-}else if(key==="run"){
+}else if(argv._[0]==="run"){
   index.run();
-}else{
+}else if(argv.v){
+  console.log("v"+pkg.version);
+}
+else{
   console.log('Uknown paramm')
 }
 

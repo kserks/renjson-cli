@@ -1,3 +1,30 @@
+# vnjson-cli
+> vnjson.js project builder
+
+# install
+
+With [npm](https://npmjs.org) do:
+
+```bash
+npm install vnjson-cli -g
+```
+
+
+# Usage
+
+```bash
+mkdir vn
+cd vn
+vnjson init
+vnjson run
+```
+
+
+# Modules
+* [`vn-init`](https://github.com/vnjson/vn-init) Visual novel boilerplate. 
+* [`scenes-to-json`](https://github.com/vnjson/scenes-to-json) Scenes builder
+- [`plugins-builder`](https://github.com/vnjson/plugins-builder) html/css/js builder
+
 
 
 ## User scripts src
@@ -87,14 +114,7 @@ public/game
 
 [spec.game-dir-tree](https://github.com/vnjson/spec/blob/master/game-dir-tree.md)
 
-___
 
-### ToDo
-
-- [x] yaml scenes to json
-- [ ] png compressor
-- [ ] audio sprite
-- [ ] audio format converter
 
 
 
