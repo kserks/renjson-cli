@@ -18,7 +18,10 @@
     "gaze": "^1.1.2",
     "gulp": "^3.9.1",
     "hexo-log": "^0.2.0",
-    "socket.io": "^2.0.4"
+    "plugins-builder": "github:vnjson/plugins-builder",
+    "scenes-to-json": "github:vnjson/scenes-to-json",
+    "socket.io": "^2.0.4",
+    "vn-init": "github:vnjson/vn-init"
   },
   "devDependencies": {}
 }

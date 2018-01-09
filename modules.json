@@ -1,5 +1,5 @@
 [
-  "../modules/vn-init",
-  "../modules/scenes-to-json",
-  "../modules/plugins-builder"
+  "vn-init",
+  "scenes-to-json",
+  "plugins-builder"
 ]
