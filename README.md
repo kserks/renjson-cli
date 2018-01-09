@@ -6,7 +6,7 @@
 With [npm](https://npmjs.org) do:
 
 ```bash
-npm install vnjson-cli -g
+npm install vnjson/vnjson-cli -g
 ```
 
 
